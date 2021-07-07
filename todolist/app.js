@@ -17,17 +17,20 @@ function createTodo() {
     li.appendChild(deleteButton);
     deleteButton.addEventListener('click', deleteTodoItem);
 
-    li.addEventListener('click', function() {
-        li.classList.toggle('done');
-    })
+    let colorPress = document.createElement('button')
+    li.appendChild(colorPress);
+    colorPress.addEventListener('click', ColorTodoItem);
 
     function deleteTodoItem() {
         li.classList.add('delete');
     }
+    function ColorTodoItem(){
+        li.classList.toggle('done');
+    }
 
 }
 
-function changeListAfterKeypress(event) {
+function changeListAfterKeyPress(event) {
     if (inputLength() && event.which === 13) {
         createTodo();
     }
@@ -41,4 +44,4 @@ function changeListAfterButtonPress() {
 
 buttonEnter.addEventListener('click', changeListAfterButtonPress);
 
-userInput.addEventListener('keypress', changeListAfterKeypress);
+userInput.addEventListener('keypress', changeListAfterKeyPress);
