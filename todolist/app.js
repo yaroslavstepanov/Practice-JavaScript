@@ -24,7 +24,7 @@ function createTodo() {
         ind:todoMap.length+1,
         text:userInput.val()
     })
-    localStorage.setItem('Todo_list',JSON.stringify(todoMap));
+    localStorage.setItem('Todo_list',JSON.stringify(todoMap));//Cохранение данных в локальное хранилище браузера.
     userInput.val('');
 
     let deleteButton = $('<button>');//Удаление заметки.
@@ -33,18 +33,21 @@ function createTodo() {
     deleteButton.click(deleteTodoItem);
 
     //Смена цвета заметки.
-    let colorButton = $('<button>');//Удаление заметки.
+    let colorButton = $('<button>');
     colorButton.append(document.createTextNode('✓'));
     li.append(colorButton);
     li.click(colorTodoItem);
 
     //Удаление заметки.
     function deleteTodoItem() {
-        li.fadeOut().remove();
+        li.fadeOut().remove();   
     }
+
+    //Смена цвета заметки.
     function colorTodoItem() {
         
      li.toggleClass('done');
+     
     }
 }
 
