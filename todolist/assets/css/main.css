@@ -1,5 +1,5 @@
 body {
-  background: #04A1BF;
+  background: #048abf;
   text-align: center;
   font-family: 'Open Sans', sans-serif; }
 
@@ -54,18 +54,22 @@ li {
   text-transform: capitalize;
   font-weight: 600;
   border: 2px solid #025f70;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-bottom: 10px;
   background: #4EB9CD;
-  transition: all 0.75s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5 ease; }
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+     }
 
 li:hover {
-  background: #76CFE0; }
-
+  background: #025f70; 
+  background: -webkit-gradient(linear, left top, left bottom, from(#025f70), to(#76CFE0));
+    background: -webkit-linear-gradient(#025f70, #76CFE0);
+    background-image: -moz-linear-gradient(top, #025f70, #76CFE0);
+    background-image: -moz-gradient(top, #025f70, #76CFE0);}
 li > button {
   font-weight: normal;
   background: none;
@@ -85,4 +89,9 @@ input {
   color: #00891E; }
 
 .delete {
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
   display: none; }
