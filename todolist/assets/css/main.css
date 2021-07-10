@@ -86,7 +86,10 @@ input {
 
 .done {
   background: #51DF70 !important;
+  box-shadow: 0 3px rgb(147, 144, 0) inset;
   color: #00891E; }
 
 .delete {
   display: none; }
+  
+

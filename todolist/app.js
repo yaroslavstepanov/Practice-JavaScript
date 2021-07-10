@@ -1,36 +1,50 @@
-let buttonEnter = document.getElementById('enter');
-let userInput = document.getElementById('userInput');
-let ul = document.querySelector('ul');
+$(function(){
+let buttonEnter = $('#enter');
+let userInput = $('#userInput');
+let ul = $('ul');
+let localStorage= window.localStorage;
+let todoMap=[
+    {
+        ind:1,
+        text:'example'
+    }
+]
 
 //Функция проверки поля ввода на пустоту.
 function inputLength() {
-    return userInput.value.length > 0;
+    return !!userInput.val();
 }
 
 //Функция для создания и удаления заметок.
 function createTodo() {
-    let li = document.createElement("li");//Создание заметки.
-    li.appendChild(document.createTextNode(userInput.value));
-    ul.appendChild(li);
-    userInput.value = '';
+    let li = $("<li>");//Создание заметки.
+    li.append(document.createTextNode(userInput.val()));
+    ul.append(li);
+    todoMap.push({
+        ind:todoMap.length+1,
+        text:userInput.val()
+    })
+    localStorage.setItem('Todo_list',JSON.stringify(todoMap));
+    userInput.val('');
 
-    let deleteButton = document.createElement('button');//Удаление заметки.
-    deleteButton.appendChild(document.createTextNode('X'));
-    li.appendChild(deleteButton);
-    deleteButton.addEventListener('click', deleteTodoItem);
+    let deleteButton = $('<button>');//Удаление заметки.
+    deleteButton.append(document.createTextNode('X'));
+    li.append(deleteButton);
+    deleteButton.click(deleteTodoItem);
 
-    let colorPress = document.createElement('button')//Смена цвета заметки.
-    li.appendChild(colorPress);
-    colorPress.addEventListener('click', ColorTodoItem);
+    //Смена цвета заметки.
+    let colorButton = $('<button>');//Удаление заметки.
+    colorButton.append(document.createTextNode('✓'));
+    li.append(colorButton);
+    li.click(colorTodoItem);
 
     //Удаление заметки.
     function deleteTodoItem() {
-        li.classList.add('delete');
+        li.fadeOut().remove();
     }
-
-    //Смена цвета заметки.
-    function ColorTodoItem(){
-        li.classList.toggle('done');
+    function colorTodoItem() {
+        
+     li.toggleClass('done');
     }
 }
 
@@ -48,6 +62,9 @@ function changeListAfterButtonPress() {
     }
 }
 
-buttonEnter.addEventListener('click', changeListAfterButtonPress);
+buttonEnter.click(changeListAfterButtonPress);
 
-userInput.addEventListener('keypress', changeListAfterKeyPress);
+userInput.keypress(changeListAfterKeyPress);
+})
+
+
