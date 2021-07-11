@@ -91,5 +91,7 @@ input {
 
 .delete {
   display: none; }
-  
+.hide{
+  opacity: 0.5;
+}
 

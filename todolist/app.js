@@ -44,9 +44,10 @@ function createTodo() {
     }
 
     //Смена цвета заметки.
-    function colorTodoItem() {
-        
-     li.toggleClass('done');
+    function colorTodoItem() { 
+         
+     li.toggleClass('done').toggleClass('hide');
+     
      
     }
 }
