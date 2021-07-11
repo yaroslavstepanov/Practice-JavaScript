@@ -36,11 +36,21 @@ function createTodo() {
     let colorButton = $('<button>');
     colorButton.append(document.createTextNode('✓'));
     li.append(colorButton);
-    li.click(colorTodoItem);
+    colorButton.click(colorTodoItem);
 
     //Удаление заметки.
     function deleteTodoItem() {
-        li.fadeOut().remove();   
+        //li.click(colorTodoItem);
+        li.animate({
+            'margin-left':'500px',
+            'margin-right':'500px',
+            'opacity':'0.5',
+ 
+        },{duration:2000,queue:true});   
+        li.animate({
+            'margin-left':'-2450px',
+            'margin-right':'2550px',
+        },{duration:2000,queue:true}).fadeOut(1000).remove(4000);   
     }
 
     //Смена цвета заметки.
