@@ -4,7 +4,7 @@ var PeertoPeerServer = require('peer').PeerServer;
 var express= require('express');
 var Actions = require('./public/src/Action.js')
 var app = express();
-var port = process.env.PORT || 6000;
+var port = process.env.PORT || 3333;
 
 app.use(express.static(__dirname+'public'));
 
