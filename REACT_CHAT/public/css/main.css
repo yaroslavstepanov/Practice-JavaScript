@@ -35,9 +35,13 @@ html {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
-.chat-message.self {
-  align-self: flex-end;
+.user2 {
+  margin-top: 0%;
+  font-size: 40px;
+  color: #fb8500;
+  margin-left: 42%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .chat-messages-empty {
@@ -61,7 +65,9 @@ html {
   font-size: 40px;
   color: #fb8500;
   margin-bottom: 30px;
-  text-align: center;
+  margin-left: 47%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .chat-box {

@@ -53,7 +53,7 @@ this.refs.messagesList.addMessage(message);
 render: function() {
 return (
 <div className="chat-box" ref="root">
-<div className="chat-header"> REACT CHAT</div>
+<div className="chat-header">Chat</div>
 <div className="chat-content row">
 <MessagesList ref="messagesList"></MessagesList>
 <UsersList users={this.state.users} ref="usersList"></UsersList>
