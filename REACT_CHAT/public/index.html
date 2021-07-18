@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" id="theme">
     <title></title>
 </head>
 <body>
     <label for="username-input2" class="user2">REACT CHAT</label>
+    <button id="switchMode">Switch</button>
     <section id="container">
         <div>
             
@@ -19,7 +20,7 @@
             <button id="connect-btn" class="button"><span>Connect</span></button>
         </div>
     </section>
-
+    
     <script src="/socket.io/socket.io.js"></script>
     <script src="lib/react/react-with-addons.js"></script>
     <script src="lib/react/JSXTransformer.js"></script>
@@ -33,6 +34,6 @@
     <script type="text/jsx" src="src/components/ChatMessage.jsx"></script>
     <script type="text/jsx" src="src/components/MessageInput.jsx"></script>
     <script type="text/jsx" src="src/components/MessageList.jsx"></script>
-    <script type="text/jsx" src="src/app.jsx"></script>
+    <script type="text/jsx" src="src/app.jsx"></script>  
 </body>
 </html>

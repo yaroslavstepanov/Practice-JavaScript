@@ -1,5 +1,14 @@
 /** @jsx React.DOM */
+let switchMode = document.getElementById("switchMode");
 
+switchMode.onclick = function () {
+    let theme= document.getElementById("theme");
+    if (theme.getAttribute("href") == "css/main.css") {
+        theme.href="css/lighttheme.css";
+    }else{
+        theme.href="css/main.css";
+    }
+}
 'use strict';
 
 var ChatBox = React.createClass({
@@ -56,9 +65,9 @@ return (
 <div className="chat-header">Chat</div>
 <div className="chat-content row">
 <MessagesList ref="messagesList"></MessagesList>
-<UsersList users={this.state.users} ref="usersList"></UsersList>
 </div>
 <MessageInput ref="messageInput" messageHandler={this.messageHandler}></MessageInput>
+<div><UsersList users={this.state.users} ref="usersList"></UsersList></div>
 </div>
 )
 }
